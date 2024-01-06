@@ -26,7 +26,7 @@ function Portfolio() {
                           <p className="card-text2"><span>Web Design</span> / 18 Sep. 2018</p>
                         </div>
                         <div className="col-sm-4">
-                          <a href="#">
+                          <a href="#portfolio">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -55,7 +55,7 @@ function Portfolio() {
                           <p className="card-text2"><span>Web Design</span> / 18 Sep. 2018</p>
                         </div>
                         <div className="col-sm-4">
-                          <a href="#">
+                          <a href="#portfolio">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -84,7 +84,7 @@ function Portfolio() {
                           <p className="card-text2"><span>Web Design</span> / 18 Sep. 2018</p>
                         </div>
                         <div className="col-sm-4">
-                          <a href="#">
+                          <a href="#portfolio">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -113,7 +113,7 @@ function Portfolio() {
                           <p className="card-text2"><span>Web Design</span> / 18 Sep. 2018</p>
                         </div>
                         <div className="col-sm-4">
-                          <a href="#">
+                          <a href="#portfolio">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -142,7 +142,7 @@ function Portfolio() {
                           <p className="card-text2"><span>Web Design</span> / 18 Sep. 2018</p>
                         </div>
                         <div className="col-sm-4">
-                          <a href="#">
+                          <a href="#portfolio">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -171,7 +171,7 @@ function Portfolio() {
                           <p className="card-text2"><span>Web Design</span> / 18 Sep. 2018</p>
                         </div>
                         <div className="col-sm-4">
-                          <a href="#">
+                          <a href="#portfolio">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
