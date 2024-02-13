@@ -1,22 +1,70 @@
 import React, { useState } from 'react'
 import { Button, Form, Row } from 'react-bootstrap'
+import axios from 'axios';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Contact() {
   const [validated, setValidated] = useState(false);
+  const [contactInfo, setContactInfo] = useState({
+    fullname:'',
+    email:'',
+    mobile:'',
+    subject:'',
+    message:''
+  });
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+
+
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.preventDefault();
+      
       event.stopPropagation();
     }
 
     setValidated(true);
+
+    try {
+
+     
+      const res = await axios.post('https://portfolio-backend-q348.onrender.com/api/v1/contact', contactInfo );
+
+
+      if(res.data.success){
+
+        toast.success(res.data.message);
+       
+        setContactInfo({
+        fullname:'',
+        email:'',
+        mobile:'',
+        subject:'',
+        message:''
+        });
+        let numField = document.getElementById("userNumber");
+        if(numField.classList.contains('is-valid')){
+          numField.classList.remove('is-valid');
+        }
+
+        setValidated(false);
+
+      }
+      
+    } catch (error) {
+      toast.error(error.message);
+    }
+
+    
   };
 
   const handleUserNumber = (event) => {
     const userNumber = event.target.value;
+    setContactInfo({...contactInfo, mobile:userNumber});
 
     if (userNumber.length !== 10) {
       if(event.target.classList.contains('is-valid')){
@@ -24,15 +72,28 @@ function Contact() {
       }else{
         event.target.classList.add('is-invalid');
       }
-     console.log(event.target);
 
     }else{
       event.target.classList.replace('is-invalid','is-valid');
+      
     }
   }
 
+  const handleChange = (e)=>{
+
+    const {name, value} = e.target;
+
+    setContactInfo({...contactInfo, [name]:value});
+
+  }
+
+
   return (
     <section className="contact" id="contact">
+      <ToastContainer 
+        position="top-center"
+        autoClose={5000} 
+      />
       <div>
         <div className="contact-content">
           <div className="row bg-light">
@@ -55,6 +116,9 @@ function Contact() {
                             placeholder="Your Name"
                             minLength={3}
                             maxLength={20}
+                            name='fullname'
+                            onChange={(e)=>handleChange(e)}
+                            value={contactInfo.fullname}
 
                           />
                           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -67,6 +131,9 @@ function Contact() {
                             required
                             type="email"
                             placeholder="Your Email"
+                            name='email'
+                            onChange={(e)=>handleChange(e)}
+                            value={contactInfo.email}
 
 
                           />
@@ -74,13 +141,15 @@ function Contact() {
                           <Form.Control.Feedback type='invalid'>Please enter valid email!</Form.Control.Feedback>
 
                         </Form.Group>
-                        <Form.Group controlId="userNumber" className='mt-3' onChange={handleUserNumber}>
+                        <Form.Group controlId="userNumber" className='mt-3' >
 
                           <Form.Control
                             required
                             type="number"
                             placeholder="Mobile no."
                             min={0}
+                            onChange={handleUserNumber}
+                            value={contactInfo.mobile}
 
 
                           />
@@ -96,7 +165,9 @@ function Contact() {
                             required
                             type="text"
                             placeholder="Subject"
-
+                            name='subject'
+                            onChange={(e)=>handleChange(e)}
+                            value={contactInfo.subject}
                           />
                           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                           <Form.Control.Feedback type='invalid'>Please enter subject!</Form.Control.Feedback>
@@ -105,7 +176,11 @@ function Contact() {
                         <Form.Group controlId="validationCustom02" className='mt-3'>
                           <Form.Control as="textarea" rows={3} required
 
-                            placeholder="Message" />
+                            placeholder="Message" 
+                            name='message'
+                            onChange={(e)=>handleChange(e)}
+                            value={contactInfo.message}
+                            />
 
                           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                           <Form.Control.Feedback type='invalid'>Please enter message!</Form.Control.Feedback>
@@ -140,7 +215,7 @@ function Contact() {
                             <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
                             <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                           </svg>
-                          <span>8711796328</span>
+                          <span>8714796328</span>
                         </div>
                         <div className="info-icons mb-2">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-envelope" viewBox="0 0 16 16">
